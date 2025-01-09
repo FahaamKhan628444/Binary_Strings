@@ -1,0 +1,29 @@
+//We have n and m. create a binary string of length n which contains m numbers of 1 in it such that f(s) will be maximize for which binary substrings of length 'n' will be containing 1's equal to 'm'.
+//Note: not to generate binary string just print the value of function.
+//Test case:1 
+// n=8 m=2
+// output is 27 
+//explanation binary string will be 00100100
+
+
+#include <iostream>
+using namespace std;
+typedef long long ll;
+int main()
+{
+    ll t;
+    cin>>t;
+    while(t--){
+        ll n,m;
+        cin>>n>>m;
+        ll y=m;
+        ll x=m+1; 
+        ll q=(n-m)/x;
+        ll r=(n-m)%x;
+        ll l=x-r;
+        ll total=(l)*(q)*(q+1)/2 + (r)*(q+1)*(q+2)/2;
+        cout<<n*(n+1)/2 - total;
+        cout<<"\n";
+    }
+    return 0;
+}
